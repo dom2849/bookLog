@@ -16,11 +16,11 @@ body{
 
 
 /* Utility */
-.icon{
+.delete{
     color: var(--grey);
 }
 
-.icon:hover{
+.delete:hover{
     cursor: pointer;
     color: var(--red);
 }
@@ -51,7 +51,6 @@ input:focus{
 .container{
     max-width: 1100px;
     margin: auto;
-    padding: 0 2rem;
 }
 
 .form-group > input,
@@ -78,6 +77,10 @@ input:focus{
 }
 
 /* Library */
+
+.library{
+    padding: 0 2rem;
+}
 .library__heading{
     text-align: center;
     font-weight: normal;
@@ -99,10 +102,13 @@ input:focus{
 }
 
 
+/* Alert */
+
 .alert-wrapper{
     display: flex;
     justify-content: center;
 }
+
 .alert{
     position: fixed;
     padding: 1rem;
