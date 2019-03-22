@@ -1,0 +1,107 @@
+*{
+    box-sizing: border-box;
+}
+/* body{
+
+} */
+
+:root{
+    --accent-color: #00BFFF;
+    --light-color: #C0C0C0;
+}
+
+h4{
+    padding: 0;
+    margin: 0;
+}
+
+body{
+    font-size: 1.7rem;
+    line-height: 1.2;
+}
+
+.icon{
+    color: var(--light-color);
+}
+
+.icon:hover{
+    cursor: pointer;
+    color: #ff0000;
+}
+
+.btn{
+    padding: 1rem 3rem;
+    cursor: pointer;
+}
+
+.btn, input{
+    border: 2px solid rgb(238, 238, 238);
+    outline: none;
+    font-size: inherit;
+    border-radius: 4px;
+} 
+
+.btn:hover,
+input:hover{
+    border: 2px solid var(--light-color);
+}
+
+.btn:active,
+input:focus{
+    border: 2px solid var(--accent-color);
+}
+
+
+.container{
+    max-width: 1100px;
+    margin: auto;
+}
+
+.form-group > input,
+.form-group > label{
+    display: block;
+    width: 100%;
+}
+
+.form-group > label{
+    margin-bottom: 1rem;
+}
+
+.form-group > input{
+    padding: 1rem;
+    margin-bottom: 2rem;
+}
+
+.form-group .btn{
+    margin: 1.5rem 0 3.5rem 0;
+}
+
+.wrapper{
+    text-align: center;
+}
+
+.library__heading{
+    text-align: center;
+    font-weight: normal;
+}
+
+.library__book-columns,
+.library__book{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 3.5rem;
+}
+
+.library__book > *,
+.library__book-columns > *{
+    flex: 1;
+}
+
+.library__book :last-child,
+.library__book-columns :last-child{
+    flex: 0;
+}
+
+.library__book-columns :last-child{
+    visibility: hidden;
+}
