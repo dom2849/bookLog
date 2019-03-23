@@ -1,0 +1,27 @@
+:root{
+    --grey: #C0C0C0;
+}
+
+.btn{
+    background: none
+}
+.library__book-columns,
+.library__book{
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 2rem;
+    border-bottom: 1px solid var(--grey);
+}
+
+.library__book-columns >*,
+.library__book >*{
+    margin-bottom: 2rem;
+}
+
+.library__book-columns :last-child{
+    display: none;
+}
+
+.library__books > :last-child{
+    border-bottom: none;
+}

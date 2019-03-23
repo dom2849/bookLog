@@ -38,9 +38,12 @@ body{
     border-radius: 4px;
 } 
 
-.btn:hover,
-input:hover{
+@media(hover){
+
+    .btn:hover,
+    input:hover{
     border: 2px solid var(--grey);
+    }
 }
 
 .btn:active,
@@ -87,6 +90,9 @@ input:focus{
     font-weight: normal;
 }
 
+.library__books > :last-child{
+    margin-bottom: 0;
+}
 .library__book-columns{
     text-shadow: 1px 0 0;
 }
@@ -110,6 +116,7 @@ input:focus{
 .library__book-columns :last-child{
     visibility: hidden;
 }
+
 
 
 /* Alert */
