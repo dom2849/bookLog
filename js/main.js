@@ -8,15 +8,20 @@ document.getElementById('add-book').addEventListener('click', function(){
     const title = document.getElementById('title').value,
           author = document.getElementById('author').value,
           isbn = document.getElementById('isbn').value;
+
     if (title === '' || author === '' || isbn === ''){
         ui.showAlert(errorMessage, 'alert alert--error');
     }
+
     else{
+        ui.addBook(new Book(title, author, isbn));
         ui.showAlert(successMessage, 'alert alert--success');
     }
 });
 
 document.querySelector('.library__books').addEventListener('click', function(){
-    console.log('delte');
+    if (!event.target.classList.contains('delete')) return;
+    ui.removeBook(event.target.parentElement);
+    
 });
 

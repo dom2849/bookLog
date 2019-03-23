@@ -93,8 +93,17 @@ input:focus{
 .library__book-columns,
 .library__book{
     display: flex;
-    justify-content: space-between;
     margin-bottom: 3.5rem;
+}
+
+.library__book-columns > *,
+.library__book > *{
+    flex: 1;
+}
+
+.library__book-columns :last-child,
+.library__book :last-child{
+    flex: 0;
 }
 
 .library__book-columns :last-child{
