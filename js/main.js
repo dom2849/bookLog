@@ -1,7 +1,5 @@
 import Book from './book.js'
 import UI from './ui.js'
-const errorMessage = 'Additional book information required',
-      successMessage = 'Book added';
 let ui = new UI();
 
 document.getElementById('add-book').addEventListener('click', function(){
@@ -10,18 +8,20 @@ document.getElementById('add-book').addEventListener('click', function(){
           isbn = document.getElementById('isbn').value;
 
     if (title === '' || author === '' || isbn === ''){
-        ui.showAlert(errorMessage, 'alert alert--error');
+        ui.showAlert('Additional information required', 'alert alert--error', 'fas fa-exclamation-triangle alert__icon');
     }
 
     else{
         ui.addBook(new Book(title, author, isbn));
-        ui.showAlert(successMessage, 'alert alert--success');
+        ui.showAlert('Book added', 'alert alert--success', 'fas fa-check alert__icon');
+        ui.clearAllFields();
     }
 });
+
 
 document.querySelector('.library__books').addEventListener('click', function(){
     if (!event.target.classList.contains('delete')) return;
     ui.removeBook(event.target.parentElement);
-    
+    ui.showAlert('Book removed', 'alert alert--success', 'fas fa-check alert__icon');
 });
 

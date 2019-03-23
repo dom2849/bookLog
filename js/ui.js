@@ -12,14 +12,14 @@ export default class UI{
         book.remove();
     }
 
-    showAlert(message, classList){
+    showAlert(message, alertClassName, iconClassName){
 
         let body = document.querySelector('body'),
             alertWrapper = document.createElement('div');
 
         alertWrapper.classList.add('alert-wrapper');
 
-        let alert = createAlert(message, classList);
+        let alert = createAlert(message, alertClassName, iconClassName);
         alertWrapper.appendChild(alert);
         
         body.appendChild(alertWrapper);
@@ -28,6 +28,14 @@ export default class UI{
             body.removeChild(alertWrapper);
             
         }, 10000)
+    }
+
+    clearAllFields(){
+        let fields = document.querySelectorAll('input');
+        console.log(fields);
+        for (let i = 0; i<fields.length; i++){
+            fields[i].value = '';
+        }
     }
 }
 
@@ -52,9 +60,15 @@ function createBook(book){
     return libraryBook
 }
 
-function createAlert(message, classList){
-    let alert = document.createElement('div');
-    alert.className = classList;
-    alert.textContent=message;
+function createAlert(message, alertClassName, iconClassName){
+    let alert = document.createElement('div'),
+        iconElement = document.createElement('i'),
+        messageElement = document.createElement('span');
+    alert.className = alertClassName;
+    iconElement.className = iconClassName;
+    messageElement.textContent = message;
+
+    alert.appendChild(iconElement);
+    alert.appendChild(messageElement);
     return alert;
 }
